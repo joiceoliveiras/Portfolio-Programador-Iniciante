@@ -1,0 +1,385 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  z-index: 1000;
+  background: transparent; /* transparente por padrão */
+  transition: background 0.3s, padding 0.3s;
+}
+
+/* quando rolar a página, muda o fundo */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 60px;
+  backdrop-filter: blur(6px);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.logo .blue {
+  color: #00c3ff; /* destaque em azul */
+}
+
+/* Links */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00c3ff;
+}
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://wallpapers.com/images/hd/code-binary-code-glow-pattern-5931cubdmyebx3h5.webp'); /* coloque o nome da sua imagem */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* camada escura por cima da imagem */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* deixa a imagem mais escura */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #00c3ff;
+}
+.btn {
+  background: white;
+  color: #2563eb;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  background: #f1f5f9;
+}
+
+/* ====== SOBRE ====== */
+.sobre {
+  padding: 100px 60px;
+  background: #f9fafb;
+}
+.sobre .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.sobre-img {
+  width: 260px;
+  height: 290px;
+  box-shadow: 0 6px 20px rgba(37,99,235,0.15);
+  border-radius: 16px;
+  border: solid  5px #2563eb;
+  overflow: hidden; /* garante que a imagem fique cortada certinha */
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.sobre-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém o rosto centralizado e proporcional */
+  display: block;
+}
+.sobre-texto {
+  max-width: 500px;
+}
+.sobre-texto h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+
+.sobre-texto p {
+  font-weight: bold;
+}
+
+/* ====== HABILIDADES ====== */
+.habilidades {
+  text-align: center;
+  padding: 100px 40px;
+}
+.habilidades h3 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 40px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+.card i {
+  font-size: 2rem;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+/* ====== PROJETOS ====== */
+.projetos {
+  text-align: center;
+  padding: 100px 60px;
+  background: #f9fafb;
+}
+.projetos h3 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 40px;
+}
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.projeto-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+.projeto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.projeto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.projeto-card h4 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
+  color: #2563eb;
+}
+.projeto-card p {
+  padding: 0 20px 20px;
+  font-size: 0.95rem;
+}
+
+/* ====== CONTATO ====== */
+.contato {
+  background: linear-gradient(135deg, #12151a, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.50rem
+}
+.contato .social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.contato .social a {
+  color: white;
+  font-size: 1.20rem;
+  transition: color 0.3s;
+}
+.contato .social a:hover {
+  color: #facc15;
+}
+.contato p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  .sobre {
+    padding: 80px 20px;
+  }
+  .projetos, .habilidades {
+    padding: 80px 20px;
+  }
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  /* Esconde o menu por padrão */
+  .navbar nav {
+    display: none;
+    width: 100%;
+  }
+
+
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1rem;
+  }
+
+  /* Sobre */
+  .sobre .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .sobre-img {
+    width: 200px;
+    height: 220px;
+  }
+
+  .sobre-texto {
+    max-width: 100%;
+  }
+
+  .sobre-texto h3 {
+    font-size: 1.4rem;
+  }
+
+  /* Habilidades */
+  .habilidades {
+    padding: 60px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projetos */
+  .projetos {
+    padding: 60px 20px;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contato */
+  .contato {
+    padding: 50px 20px;
+    font-size: 1rem;
+  }
+
+  .contato .social {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
