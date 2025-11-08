@@ -8,7 +8,7 @@ Ideal para quem deseja apresentar seus projetos, habilidades e informações pro
 
 ## 🖼️ Prévia
 
-![Preview do Portfólio]([https://i.pinimg.com/736x/7d/62/51/7d6251037b8b47df26aa25762f9b33d2.jpg](https://joiceoliveiras.github.io/Portfolio-Programador-Iniciante/))
+![Preview do Portfólio]((https://joiceoliveiras.github.io/Portfolio-Programador-Iniciante/))
 
 ---
 
